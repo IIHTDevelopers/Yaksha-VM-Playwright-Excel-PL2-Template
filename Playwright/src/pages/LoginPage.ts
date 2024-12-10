@@ -42,29 +42,8 @@ export class LoginPage {
    */
 
   async performLogin(loginData: Record<string, string>): Promise<boolean> {
-    let isUserLoggedIn = false;
-
-    try {
-      // Highlight and fill the username field
-      await CommonMethods.highlightElement(this.usernameInput);
-      await this.usernameInput.fill(loginData['ValidUserName']);
-
-      // Highlight and fill the password field
-      await CommonMethods.highlightElement(this.passwordInput);
-      await this.passwordInput.fill(loginData['ValidPassword']);
-
-      // Highlight and click the login button
-      await CommonMethods.highlightElement(this.loginButton);
-      await this.loginButton.click();
-
-      // Verify successful login by checking if 'admin' element is visible
-      await this.admin.waitFor({ state: "visible", timeout: 20000 });
-      isUserLoggedIn = await this.admin.isVisible();
-    } catch (e) {
-      console.error("Error during login:", e);
-    }
-
-    return isUserLoggedIn;
+    // write your logic here
+    return false;
   }
 
 
@@ -83,26 +62,8 @@ export class LoginPage {
  *                            otherwise false.
  */
 async verifyThePresenceOfLoginFields(loginData: Record<string, string>): Promise<boolean> {
-  let isUserLoggedIn: boolean = false;
-  try {
-    await this.page.waitForTimeout(2000);
-
-    // Attempt to reset login state by logging out if logged in
-    if (await this.admin.isVisible()) {
-      await CommonMethods.highlightElement(this.admin);
-      await this.admin.click();
-
-      await CommonMethods.highlightElement(this.logOut);
-      await this.logOut.click();
-    }
-    if (await this.usernameInput.isVisible() && await this.passwordInput.isVisible() && await this.rememberMeCheckbox.isVisible()) {
-      await this.performLogin(loginData);
-      isUserLoggedIn = true;
-    }
-  } catch (e) {
-    console.error("Error during login field verification:", e);
-  }
-  return isUserLoggedIn;
+  // write your logic here
+    return false;
 }
 
 }
