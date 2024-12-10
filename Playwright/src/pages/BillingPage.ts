@@ -47,31 +47,7 @@ export default class DispensaryPage {
  * @throws Logs an error message if there is an issue during the verification process.
  */
   async verifyBillDetails(): Promise<boolean> {
-    try {
-      await CommonMethods.highlightElement(this.billing.billingModule);
-      await this.billing.billingModule.click();
-      await this.page.waitForTimeout(2000);
-
-      await this.billing.counter.click();
-
-      await CommonMethods.highlightElement(this.billing.returnBills);
-      await this.billing.returnBills.click();
-      await this.page.waitForTimeout(2000);
-      await CommonMethods.highlightElement(this.billing.fiscalYearDropdown);
-      await this.billing.fiscalYearDropdown.selectOption("2024");
-      await this.page.waitForTimeout(2000);
-      await CommonMethods.highlightElement(this.billing.invoiceNumberField);
-      await this.billing.invoiceNumberField.fill("95");
-      await this.page.waitForTimeout(1000);
-      await CommonMethods.highlightElement(this.billing.searchButton);
-      await this.billing.searchButton.click();
-      await this.page.waitForTimeout(1000);
-      const count = await this.billing.tableData.count();
-      expect(count).toBeGreaterThan(0);
-      return true;
-    } catch (error) {
-      console.error("Error searching and verifying patients:", error);
-      return false;
-    }
+    // write your logic here
+    return false;
   }
 }
