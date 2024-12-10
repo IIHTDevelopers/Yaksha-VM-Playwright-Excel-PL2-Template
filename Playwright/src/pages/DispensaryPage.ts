@@ -63,65 +63,9 @@ export default class DispensaryPage {
    * @return boolean - Returns true if the activation message correctly shows the selected counter name; otherwise, returns false.
    */
   async verifyActiveCounterMessageInDispensary(): Promise<boolean> {
-    let isCounterNameActivated = false;
-    try {
-      // Navigate to Dispensary module
-      await CommonMethods.highlightElement(this.dispensary.dispensaryLink);
-      await this.dispensary.dispensaryLink.click();
-      await CommonMethods.highlightElement(this.dispensary.activateCounter);
-      await this.dispensary.activateCounter.click();
-      // Wait for the page to load
-      await this.page.waitForTimeout(2000);
-      await this.page.waitForSelector("//span[@class='caption-subject']", {
-        state: "visible",
-      });
-
-      // Get the count of available counters
-      const counterCount = await this.dispensary.counterSelection.count();
-      console.log(`Counter count >> ${counterCount}`);
-
-      if (counterCount >= 1) {
-        // Select a random counter index
-        const randomIndex = Math.floor(Math.random() * counterCount);
-        console.log(`Random counter index selected: ${randomIndex}`);
-
-        // Fetch the name of the selected counter
-        const fullCounterText = await this.dispensary.counterName
-          .nth(randomIndex)
-          .textContent();
-        let counterName =
-          fullCounterText?.split("click to Activate")[0].trim() || ""; // Extracts "Morning Counter"
-        console.log(`Counter name at index ${randomIndex}: ${counterName}`);
-
-        // Highlight and select the random counter
-        const randomCounter = this.dispensary.counterSelection.nth(randomIndex);
-        await CommonMethods.highlightElement(randomCounter);
-        await randomCounter.click();
-
-        // Activate the selected counter
-        await CommonMethods.highlightElement(this.dispensary.activateCounter);
-        await this.dispensary.activateCounter.click();
-
-        // Get and verify the activation message text
-        const activatedCounterInfoText =
-          await this.dispensary.activatedCounterInfo.textContent();
-        console.log(
-          `Activated counter info text : ${activatedCounterInfoText}`
-        );
-
-        // Check if the message contains the selected counter name
-        if (activatedCounterInfoText?.includes(counterName)) {
-          isCounterNameActivated = true;
-          console.log(
-            `-------------------------Returning true-------------------------`
-          );
-        }
-      }
-    } catch (e) {
-      console.error("Error selecting random counter:", e);
+    // write your logic here
+        return false;
     }
-    return isCounterNameActivated;
-  }
 
   /**
    * @Test9 This method verifies if the counter is activated in the dispensary section.
@@ -134,27 +78,9 @@ export default class DispensaryPage {
    */
 
   async verifyCounterisActivated(): Promise<boolean> {
-    try {
-      await CommonMethods.highlightElement(this.dispensary.dispensaryLink);
-      await this.dispensary.dispensaryLink.click();
-
-      await this.page.waitForTimeout(2000);
-
-      await CommonMethods.highlightElement(this.dispensary.activateCounter);
-      await this.dispensary.activateCounter.click();
-
-      if (!(await this.dispensary.deactivateCounterButton.isVisible())) {
-        console.warn(
-          "Element not found on page:",
-          await this.dispensary.deactivateCounterButton.textContent()
-        );
+    // write your logic here
         return false;
-      }
-    } catch (error) {
-      console.error("Error during activation message verification:", error);
     }
-    return true;
-  }
 
 
   
@@ -173,37 +99,7 @@ export default class DispensaryPage {
   async verfiySearchfunctionality(
     data: Record<string, string>
   ): Promise<boolean> {
-    try {
-      const fromDate = data["FromDate"];
-      await CommonMethods.highlightElement(this.dispensary.dispensaryLink);
-      await this.dispensary.dispensaryLink.click();
-      await CommonMethods.highlightElement(this.dispensary.report);
-      await this.dispensary.report.click();
-      await this.page.waitForTimeout(2000);
-      await CommonMethods.highlightElement(
-        this.dispensary.userCollectionReport
-      );
-      await this.dispensary.userCollectionReport.click();
-      await this.page.waitForTimeout(2000);
-      // Select the From Date and To Date
-      await CommonMethods.highlightElement(this.fromDate);
-      await this.fromDate.type(fromDate, { delay: 100 });
-      await CommonMethods.highlightElement(this.dispensary.showReportButton);
-      await this.dispensary.showReportButton.click();
-
-      const patientName = await this.dispensary.patientName.innerText();
-      console.log(`Patient name --> ${patientName}`);
-
-      await CommonMethods.highlightElement(this.dispensary.searchBar);
-      await this.dispensary.searchBar.fill(patientName);
-      const searchbarName = await this.dispensary.searchBar.textContent();
-      console.log(`Search bar name --> ${searchbarName}`);
-
-      expect(patientName).toEqual(patientName);
-      return true;
-    } catch (e) {
-      console.error("Error selecting random counter:", e);
-      return false;
+    // write your logic here
+        return false;
     }
-  }
 }
