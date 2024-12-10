@@ -10,7 +10,7 @@ export class DashboardPage {
     }
 
     async isDashboardVisible(): Promise<boolean> {
-        await this.dashboardLogo.waitFor({ state: 'visible' });
-        return this.dashboardLogo.isVisible();
+        // write your logic here
+        return false;
     }
 }
