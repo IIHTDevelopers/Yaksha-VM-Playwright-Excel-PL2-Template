@@ -70,61 +70,7 @@ export default class SettingsPage {
   public async verifyAddAndEditDepartment(
     addDepartmentData: Record<string, string>
   ) {
-    try {
-      await CommonMethods.highlightElement(this.settings.settingsModule);
-      await this.settings.settingsModule.click();
-      await this.page.waitForTimeout(2000);
-      await CommonMethods.highlightElement(this.settings.departments);
-      await this.settings.departments.click();
-
-      await CommonMethods.highlightElement(this.settings.addDepartmentButton);
-      await this.settings.addDepartmentButton.click();
-
-      const code = Math.floor(Math.random() * (10000 - 1 + 1)) + 1;
-      const departmentCode = addDepartmentData["DepartmentCode"] + code;
-      console.log(`Department code --> ${departmentCode}`);
-      await this.settings.departmentCode.fill(departmentCode);
-      await this.settings.departmentName.fill(departmentCode);
-
-      await CommonMethods.highlightElement(
-        this.settings.addDepartmentModalButton
-      );
-      await this.settings.addDepartmentModalButton.click();
-      await this.page.waitForTimeout(2000);
-
-      await CommonMethods.highlightElement(this.settings.searchBar);
-      this.settings.searchBar.fill(departmentCode);
-      await this.page.waitForTimeout(2000);
-
-      // Press Enter after clicking the edit button
-      await this.page.keyboard.press("Enter");
-
-      await this.page
-        .locator(
-          `//div[text()="${departmentCode}"]/../div/a[@danphe-grid-action="edit"]`
-        )
-        .click();
-
-      await this.page.waitForTimeout(2000);
-
-      // Select "No" (false) from the dropdown
-      const dropdown = this.page.locator("#id_select_department_isActive");
-      await dropdown.selectOption({ value: "false" });
-
-      console.log("Successfully selected 'No' in the dropdown.");
-
-      await CommonMethods.highlightElement(
-        this.settings.updateDepaertmentButton
-      );
-      await this.settings.updateDepaertmentButton.click();
-      await this.page.waitForTimeout(2000);
-
-      const successMsg =
-        await this.settings.departmentUpdatedSuccessMsg.textContent();
-      console.log(`Success msg - ${successMsg}`);
-      return successMsg;
-    } catch (e) {
-      console.log(e);
-    }
+    // write your logic here
+    return "";
   }
 }
