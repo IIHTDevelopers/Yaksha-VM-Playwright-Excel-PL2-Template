@@ -43,34 +43,8 @@ export default class ClaimManagementPage {
  * @return boolean - Returns true if the results are successfully loaded and verified; false otherwise.
  */
   async verifyBillReview(data: Record<string, string>): Promise<boolean> {
-    try {
-      const fromDate = data["FromDate"];
-      await CommonMethods.highlightElement(
-        this.claimManagement.claimManagementModule
-      );
-      await this.claimManagement.claimManagementModule.click();
-      await this.page.waitForTimeout(2000);
-      await CommonMethods.highlightElement(
-        this.claimManagement.insuranceprovider
-      );
-      await this.claimManagement.insuranceprovider.click();
-      await this.page.waitForTimeout(2000);
-      await CommonMethods.highlightElement(this.claimManagement.billReview);
-      await this.claimManagement.billReview.click();
-      await this.page.waitForTimeout(2000);
-      await CommonMethods.highlightElement(this.claimManagement.fromDate);
-      await this.claimManagement.fromDate.type(fromDate, { delay: 100 });
-      await this.page.waitForTimeout(1000);
-      await CommonMethods.highlightElement(this.claimManagement.loadButton);
-      await this.claimManagement.loadButton.click();
-      await this.page.waitForTimeout(1000);
-      const count = await this.claimManagement.tableData.count();
-      expect(count).toBeGreaterThan(0);
-      return true;
-    } catch (error) {
-      console.error("Error searching and verifying patients:", error);
-      return false;
-    }
+     // write your logic here
+    return false;
   }
 
   /**
@@ -83,36 +57,8 @@ export default class ClaimManagementPage {
  * @return boolean - Returns true if navigation is successful and the URL validation passes; false otherwise.
  */
   async verifyWindowNavigation(): Promise<boolean> {
-    try {
-      await CommonMethods.highlightElement(
-        this.claimManagement.dashboardModule
-      );
-      await this.page.waitForTimeout(2000);
-      await this.claimManagement.dashboardModule.click();
-
-      await CommonMethods.highlightElement(
-        this.claimManagement.claimManagementModule
-      );
-      await this.claimManagement.claimManagementModule.click();
-      await this.page.waitForTimeout(2000);
-      await CommonMethods.highlightElement(
-        this.claimManagement.insuranceprovider
-      );
-      const currentURL: string = this.page.url();
-      await this.page.waitForTimeout(2000);
-      await CommonMethods.highlightElement(
-        this.claimManagement.dashboardModule
-      );
-      await this.page.waitForTimeout(2000);
-      await this.claimManagement.dashboardModule.click();
-      await this.page.goBack();
-      expect(currentURL).toContain("SelectInsuranceProvider");
-
-      return true;
-    } catch (error) {
-      console.error("Error searching and verifying patients:", error);
-      return false;
-    }
+     // write your logic here
+    return false;
   }
 
 }
