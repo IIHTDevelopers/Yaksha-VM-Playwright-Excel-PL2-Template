@@ -43,39 +43,7 @@ export default class LaboratoryPage {
    * @return string - The error message text, trimmed of any whitespace.
    */
   async verifyErrorMessage(): Promise<string> {
-    let errorMessageText = "";
-    try {
-      // Navigate to Laboratory > Settings
-      await CommonMethods.highlightElement(this.laboratoryLink);
-      await this.laboratoryLink.click();
-
-      await CommonMethods.highlightElement(this.settingsSubModule);
-      await this.settingsSubModule.click();
-
-      // Click on Add New Lab Test
-      await CommonMethods.highlightElement(this.addNewLabTest);
-      await this.addNewLabTest.click();
-
-      // Click on Add button without entering any values
-      await CommonMethods.highlightElement(this.addButton);
-      await this.addButton.click();
-
-      // Capture the error message text
-      const errorLocator = this.getErrorMessageLocator(
-        "Lab Test Code Required."
-      );
-      await expect(errorLocator).toBeVisible();
-      errorMessageText = (await errorLocator.textContent()) || "";
-      console.log(`Error message text: ${errorMessageText}`);
-
-      // Close the modal
-      await CommonMethods.highlightElement(this.closeButton);
-      await this.closeButton.click();
-    } catch (e) {
-      console.error("Error verifying error message:", e);
-      throw new Error("Failed to verify error message and close modal");
-    }
-
-    return errorMessageText.trim();
+    // write your logic here
+    return "";
   }
 }
