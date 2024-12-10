@@ -63,39 +63,8 @@ export default class ProcurementPage {
    * @return boolean - Returns true if all elements are visible; otherwise, returns false.
    */
   async verifyPurchaseRequestListElements(): Promise<boolean> {
-    // Navigate to Procurement module
-    await CommonMethods.highlightElement(this.procurement);
-    await this.procurement.click();
-    await this.page.waitForTimeout(2000);
-
-    // Define the list of elements to verify visibility
-    const elements = [
-      this.purchaseRequest,
-      this.purchaseOrder,
-      this.goodsArrivalNotification,
-      this.quotations,
-      this.settings,
-      this.reports,
-      this.favoriteButton,
-      this.okButton,
-      this.printButton,
-      this.firstButton,
-      this.previousButton,
-      this.nextButton,
-      this.lastButton,
-    ];
-
-    // Loop through each element to verify its visibility
-    for (const element of elements) {
-      await CommonMethods.highlightElement(element);
-      if (!(await element.isVisible())) {
-        console.warn("Element not found on page:", await element.textContent());
-        return false; // Return false if any element is not visible
-      }
-    }
-
-    // Return true if all elements are present
-    return true;
+    // write your logic here
+    return false;
   }
 
   /**
@@ -108,27 +77,7 @@ export default class ProcurementPage {
    * @return string - The trimmed error message displayed on the page after entering invalid filters.
    */
   async verifyNoticeMessageAfterEnteringIncorrectFilters(): Promise<string> {
-    let actualErrorMessage = "";
-    try {
-      await CommonMethods.highlightElement(this.procurement);
-      await this.procurement.click();
-
-      await CommonMethods.highlightElement(this.purchaseRequest);
-      await this.purchaseRequest.click();
-
-      await CommonMethods.highlightElement(this.fromDate);
-      await this.fromDate.type("00-00-0000", { delay: 100 });
-
-      await CommonMethods.highlightElement(this.okButton);
-      await this.okButton.click();
-
-      actualErrorMessage = (await this.invalidMsg.textContent()) || "";
-      console.log(
-        `----------------------------Invalid Error Message --->> ${actualErrorMessage}----------------------------`
-      );
-    } catch (e) {
-      throw new Error("Error message not found on page");
-    }
-    return actualErrorMessage.trim();
+    // write your logic here
+    return "";
   }
 }
