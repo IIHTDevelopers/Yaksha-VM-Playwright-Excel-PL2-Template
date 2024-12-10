@@ -39,63 +39,7 @@ export default class AppointmentPage {
    */
 
   async searchAndVerifyPatientList(): Promise<boolean> {
-    try {
-      // Navigate to the appointment page
-      await CommonMethods.highlightElement(this.appointment.appointmentLink);
-      await this.appointment.appointmentLink.click();
-      // Wait for the patient list page to be visible
-      await CommonMethods.highlightElement(this.appointment.titleName);
-      await this.appointment.titleName.isVisible();
-      // Verify the first patient name
-      await CommonMethods.highlightElement(
-        this.appointment.patientName.first()
-      );
-      await expect(this.appointment.patientName.first()).toBeVisible();
-      // Get the name of the first patient
-      const searchName = await this.appointment.patientName.first().innerText();
-      // Fill the search bar with the patient's name and press Enter
-      await CommonMethods.highlightElement(this.appointment.searchBar);
-      await this.appointment.searchBar.fill(searchName);
-      await this.appointment.searchBar.press("Enter");
-      // Wait for the results to load
-      await this.page.waitForTimeout(3000);
-      // Locate all patient names in the search results
-      const patientNames = await this.page.locator(
-        "//div[@role='gridcell' and @col-id='ShortName']"
-      );
-      // Verify that each patient's name in the result matches the search term
-      const patientNamecount = await patientNames.count();
-      const maxChecks = Math.min(patientNamecount, 20); // Limit checks to 20 results
-      for (let i = 0; i < maxChecks; i++) {
-        const name = await patientNames.nth(i).innerText();
-        expect(name).toEqual(searchName);
-      }
-      // Get the name of the first patient
-      const HospitalsearchCode = await this.appointment.patientCode
-        .first()
-        .innerText();
-      // Fill the search bar with the patient's name and press Enter
-      await CommonMethods.highlightElement(this.appointment.hospitalSearchBar);
-      await this.appointment.hospitalSearchBar.fill(HospitalsearchCode);
-      await this.appointment.hospitalSearchBar.press("Enter");
-      // Wait for the results to load
-      await this.page.waitForTimeout(3000);
-      // Locate all patient names in the search results
-      const patientCode = this.page.locator(
-        "//div[@role='gridcell' and @col-id='PatientCode']"
-      );
-      // Verify that each patient's name in the result matches the search term
-      const patientCodecount = await patientCode.count();
-      const maxCheck = Math.min(patientCodecount, 20); // Limit checks to 20 results
-      for (let i = 0; i < maxCheck; i++) {
-        const code = await patientCode.nth(i).innerText();
-        expect(code).toEqual(HospitalsearchCode);
-      }
-      // Return true if all assertions pass
-      return true;
-    } catch (error) {
-      console.error(`Error in searchAndVerifyPatientList: ${error}`);
-      return false;
-    }
+    // write your logic here
+    return false;
   }
 }
