@@ -11,16 +11,16 @@ export default class RadiologyPage {
   private closeModalButton: Locator;
   constructor(page: Page) {
     this.page = page;
-    this.radiologyModule = page.locator('a[href="#/Radiology"]');
+    this.radiologyModule = page.locator('');
     this.listRequestSubModule = page.locator(
-      '//a[contains(text(),"List Requests")]'
+      ''
     );
-    this.fromDate = page.locator(`(//input[@id="date"])[1]`);
-    this.okButton = page.locator(`//button[contains(text(),"OK")]`);
+    this.fromDate = page.locator(``);
+    this.okButton = page.locator(``);
     this.addReportButton = page.locator(
-      '(//a[contains(text(),"Add Report")])[1]'
+      ''
     );
-    this.closeModalButton = page.locator(`a[title="Cancel"]`);
+    this.closeModalButton = page.locator(``);
   }
   /**
    * @Test6 This method performs a radiology request and handles alerts that may arise during the process.
