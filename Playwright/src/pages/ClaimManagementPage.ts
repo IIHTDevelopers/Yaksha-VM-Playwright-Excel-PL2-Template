@@ -19,16 +19,16 @@ export default class ClaimManagementPage {
   constructor(page: Page) {
     this.page = page;
     this.claimManagement = {
-      claimManagementModule: page.locator("(//span[text() = 'ClaimMgmt'])[1]"),
-      insuranceprovider: page.locator("(//a[@class='report_list'])[1]"),
-      billReview: page.locator("//a[text() = ' Bill Review ']"),
-      searchButton: page.locator("//div[@class='search-list']//button"),
-      invoiceNumberField: page.locator('//div[@class="search-list"]//input'),
-      counterItem: page.locator("//div[@class='counter-item']"),
-      tableData: page.locator("(//div[@class='col-md-12']//tbody)[2]//tr"),
-      fromDate: page.locator(`(//input[@id="date"])[1]`),
-      loadButton: page.locator(`//button[text() = 'Load ']`),
-      dashboardModule: page.locator(`//div[@class="page-logo"]`),
+      claimManagementModule: page.locator(""),
+      insuranceprovider: page.locator(""),
+      billReview: page.locator(""),
+      searchButton: page.locator(""),
+      invoiceNumberField: page.locator(''),
+      counterItem: page.locator(""),
+      tableData: page.locator(""),
+      fromDate: page.locator(``),
+      loadButton: page.locator(``),
+      dashboardModule: page.locator(``),
     };
   }
 
