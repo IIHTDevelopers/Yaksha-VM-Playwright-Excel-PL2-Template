@@ -15,14 +15,14 @@ export default class PatientPage {
   constructor(page: Page) {
     this.page = page;
     this.patient = {
-      patientLink: page.locator('a[href="#/Patient"]'),
-      searchBar: page.locator("#quickFilterInput"),
-      hospitalSearchBar: page.locator("#id_input_search_using_hospital_no"),
+      patientLink: page.locator(''),
+      searchBar: page.locator(""),
+      hospitalSearchBar: page.locator(""),
       patientName: page.locator(
-        "//div[@role='gridcell' and @col-id='ShortName'][1]"
+        ""
       ),
       patientCode: page.locator(
-        "//div[@role='gridcell' and @col-id='PatientCode'][1]"
+        ""
       ),
     };
   }
