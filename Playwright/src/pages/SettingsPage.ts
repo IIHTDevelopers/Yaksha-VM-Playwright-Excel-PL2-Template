@@ -28,28 +28,28 @@ export default class SettingsPage {
   constructor(page: Page) {
     this.page = page;
     this.settings = {
-      settingsModule: page.locator("(//a//span[text()='Settings'])[5]"),
-      departments: page.locator("//a[text()= ' Departments ']"),
-      manageDepartment: page.locator("//a[text()= 'Manage Department']"),
-      searchBar: page.locator("#quickFilterInput"),
+      settingsModule: page.locator(""),
+      departments: page.locator(""),
+      manageDepartment: page.locator(""),
+      searchBar: page.locator(""),
       ChangeBillingCounter: page.locator(
-        '//a[text()= " Change Billing Counter "]'
+        ''
       ),
-      counters: page.locator("//div[@class='modelbox-div clearfix']"),
-      counterItem: page.locator("//div[@class='counter-item']"),
-      editButton: page.locator("//a[@danphe-grid-action='edit']"),
-      editFormTitle: page.locator("//h3//span"),
-      closeButton: page.locator("//a[@title='Cancel']"),
-      addDepartmentButton: page.locator(`//a[text()="Add Department"]`),
-      departmentCode: page.locator(`input#id_department_code`),
-      departmentName: page.locator(`input#id_department_name`),
-      parentDepartmentName: page.locator(`select#id_parent_department`),
-      addDepartmentModalButton: page.locator(`input#AddDepartment`),
-      editbutton: page.locator(`//a[@danphe-grid-action="edit"]`),
+      counters: page.locator(""),
+      counterItem: page.locator(""),
+      editButton: page.locator(""),
+      editFormTitle: page.locator(""),
+      closeButton: page.locator(""),
+      addDepartmentButton: page.locator(``),
+      departmentCode: page.locator(``),
+      departmentName: page.locator(``),
+      parentDepartmentName: page.locator(``),
+      addDepartmentModalButton: page.locator(``),
+      editbutton: page.locator(``),
       departmentUpdatedSuccessMsg: page.locator(
-        `//p[contains(text(),"success")]/../p[contains(text(),"Department Updated")]`
+        ``
       ),
-      updateDepaertmentButton: page.locator(`input#UpdateDepartment`),
+      updateDepaertmentButton: page.locator(``),
     };
   }
 
