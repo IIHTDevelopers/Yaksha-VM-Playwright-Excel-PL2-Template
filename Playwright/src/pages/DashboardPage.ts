@@ -6,7 +6,7 @@ export class DashboardPage {
 
     constructor(page: Page) {
         this.page = page;
-        this.dashboardLogo = page.locator(`img[title="Go to DanpheEMR-Home"]`);
+        this.dashboardLogo = page.locator(``);
     }
 
     async isDashboardVisible(): Promise<boolean> {
