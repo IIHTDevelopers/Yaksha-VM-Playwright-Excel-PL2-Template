@@ -28,28 +28,28 @@ export default class DispensaryPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.fromDate = page.locator(`(//input[@id="date"])[1]`);
+    this.fromDate = page.locator(``);
     this.dispensary = {
-      dispensaryLink: page.locator('a[href="#/Dispensary"]'),
-      activateCounter: page.locator("//a[contains(text(),'Counter')]"),
-      counterSelection: page.locator('//div[@class="counter-item"]'),
-      counterName: page.locator('//div[@class="counter-item"]//h5'),
-      activatedCounterInfo: page.locator(`div.mt-comment-info`),
+      dispensaryLink: page.locator(''),
+      activateCounter: page.locator(""),
+      counterSelection: page.locator(''),
+      counterName: page.locator(''),
+      activatedCounterInfo: page.locator(``),
       deactivateCounterButton: page.locator(
-        `//button[contains(text(),'Deactivate Counter')]`
+        ``
       ),
-      titleName: page.locator('//span[@class="caption-subject"]'),
-      name: page.locator('(//div[@class="col-sm-4 col-md-3"]//label//span)[1]'),
-      prescription: page.locator("//a[contains(text(),' Prescription ')]"),
-      report: page.locator(" //a[text()=' Reports ']"),
+      titleName: page.locator(''),
+      name: page.locator(''),
+      prescription: page.locator(""),
+      report: page.locator(""),
       userCollectionReport: page.locator(
-        "(//span[@class='report-name']//i)[1]"
+        ""
       ),
-      showReportButton: page.locator("//span[text()='Show Report']"),
+      showReportButton: page.locator(""),
       patientName: page.locator(
-        "(//div[@role='row']//div[@col-id='PatientName'])[2]"
+        ""
       ),
-      searchBar: page.locator("#quickFilterInput"),
+      searchBar: page.locator(""),
     };
   }
 
