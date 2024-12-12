@@ -18,15 +18,15 @@ export default class DispensaryPage {
   constructor(page: Page) {
     this.page = page;
     this.billing = {
-      billingModule: page.locator("(//span[text() = 'Billing'])[1]"),
-      returnBills: page.locator("//a[text()='Return Bills ']"),
-      fiscalYearDropdown: page.locator("//div[@class='search-list']//select"),
-      searchButton: page.locator("//div[@class='search-list']//button"),
-      invoiceNumberField: page.locator('//div[@class="search-list"]//input'),
-      speceficYearOption: page.locator("//option[text()= ' 2024 ']"),
-      counterItem: page.locator("//div[@class='counter-item']"),
-      tableData: page.locator("(//div[@class='col-md-12']//tbody//tr)[2]"),
-      counter: page.locator(`(//div[@class="counter-item"])[1]`),
+      billingModule: page.locator(""),
+      returnBills: page.locator(""),
+      fiscalYearDropdown: page.locator(""),
+      searchButton: page.locator(""),
+      invoiceNumberField: page.locator(''),
+      speceficYearOption: page.locator(""),
+      counterItem: page.locator(""),
+      tableData: page.locator(""),
+      counter: page.locator(``),
     };
   }
 
