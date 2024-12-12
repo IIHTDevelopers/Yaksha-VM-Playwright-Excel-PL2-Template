@@ -13,12 +13,12 @@ export default class UtilitiesPage {
   constructor(page: Page) {
     this.page = page;
     this.utilities = {
-      utilitiesModule: page.locator("//span[text()='Utilities']"),
+      utilitiesModule: page.locator(""),
       ChangeBillingCounter: page.locator(
-        '//a[text()= " Change Billing Counter "]'
+        ''
       ),
-      counters: page.locator("//div[@class='modelbox-div clearfix']"),
-      counterItem: page.locator("//div[@class='counter-item']"),
+      counters: page.locator(""),
+      counterItem: page.locator(""),
     };
   }
 
