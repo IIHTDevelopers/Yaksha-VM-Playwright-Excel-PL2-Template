@@ -14,15 +14,15 @@ export default class AppointmentPage {
   constructor(page: Page) {
     this.page = page;
     this.appointment = {
-      appointmentLink: page.locator('a[href="#/Appointment"]'),
-      titleName: page.locator("//span[text() = 'Patient List |']"),
-      searchBar: page.locator("#quickFilterInput"),
-      hospitalSearchBar: page.locator("#id_input_search_using_hospital_no"),
+      appointmentLink: page.locator(''),
+      titleName: page.locator(""),
+      searchBar: page.locator(""),
+      hospitalSearchBar: page.locator(""),
       patientName: page.locator(
-        "//div[@role='gridcell' and @col-id='ShortName'][1]"
+        ""
       ),
       patientCode: page.locator(
-        "//div[@role='gridcell' and @col-id='PatientCode'][1]"
+        ""
       ),
     };
   }
