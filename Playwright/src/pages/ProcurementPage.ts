@@ -26,32 +26,32 @@ export default class ProcurementPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.procurement = page.locator('a[href="#/ProcurementMain"]');
+    this.procurement = page.locator('');
     this.purchaseRequest = page.locator(
-      `//a[contains(text(),"Purchase Request")]`
+      ``
     );
     this.purchaseOrder = page.locator(
-      `(//a[contains(text(),"Purchase Order")])[1]`
+      ``
     );
     this.goodsArrivalNotification = page.locator(
-      `//a[contains(text(),"Goods Arrival Notification")]`
+      ``
     );
-    this.quotations = page.locator(`//a[contains(text(),"Quotation")]`);
-    this.settings = page.locator(`//a[contains(text(),"Settings")]`);
-    this.reports = page.locator(`//a[contains(text(),"Reports")]`);
+    this.quotations = page.locator(``);
+    this.settings = page.locator(``);
+    this.reports = page.locator(``);
     this.favoriteButton = page.locator(
-      `//i[contains(@class,"icon-favourite")]`
+      ``
     );
-    this.okButton = page.locator(`//button[contains(text(),"OK")]`);
-    this.printButton = page.locator(`//button[text()='Print']`);
-    this.firstButton = page.locator(`//button[text()='First']`);
-    this.previousButton = page.locator(`//button[text()='Previous']`);
-    this.nextButton = page.locator(`//button[text()='Next']`);
-    this.lastButton = page.locator(`//button[text()='Last']`);
-    this.fromDate = page.locator(`(//input[@id="date"])[1]`);
-    this.toDate = page.locator(`(//input[@id="date"])[2]`);
-    this.invalidMsg = page.locator(`//div[contains(@class,"invalid-msg-cal")]`);
-    this.requestedDateColumn = page.locator(`div[col-id="RequestDate"]`);
+    this.okButton = page.locator(``);
+    this.printButton = page.locator(``);
+    this.firstButton = page.locator(``);
+    this.previousButton = page.locator(``);
+    this.nextButton = page.locator(``);
+    this.lastButton = page.locator(``);
+    this.fromDate = page.locator(``);
+    this.toDate = page.locator(``);
+    this.invalidMsg = page.locator(``);
+    this.requestedDateColumn = page.locator(``);
   }
 
   /**
