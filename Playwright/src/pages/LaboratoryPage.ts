@@ -14,21 +14,21 @@ export default class LaboratoryPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.laboratoryLink = page.locator('a[href="#/Lab"]');
-    this.laboratoryDashboard = page.locator('a[href="#/Lab/Dashboard"]');
-    this.settingsSubModule = page.locator('(//a[@href="#/Lab/Settings"])[2]');
+    this.laboratoryLink = page.locator('');
+    this.laboratoryDashboard = page.locator('');
+    this.settingsSubModule = page.locator('');
     this.addNewLabTest = page.locator(
-      '//a[contains(text(),"Add New Lab Test")]'
+      ''
     );
-    this.addButton = page.locator('//button[contains(text(),"Add")]');
-    this.closeButton = page.locator('//button[contains(text(),"Close")]');
-    this.starIcon = page.locator('i[title="Remember this Date"]');
+    this.addButton = page.locator('');
+    this.closeButton = page.locator('');
+    this.starIcon = page.locator('');
   }
 
   public get getErrorMessageLocator() {
     return (errorMessage: string) => {
       return this.page.locator(
-        `//p[contains(text(),"error")]/../p[contains(text(),"${errorMessage}")]`
+        ``
       );
     };
   }
